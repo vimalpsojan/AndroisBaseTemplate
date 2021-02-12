@@ -6,6 +6,8 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
+def Base_URL = '"http://localhost/DemoApi/"'
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -16,7 +18,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        buildConfigField("String", "BASE_URL", Base_URL)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
