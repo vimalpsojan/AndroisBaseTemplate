@@ -1,0 +1,105 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.vimal.sample"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    api project(":core")
+    implementation project(":advancedrecyclerview")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.appcompat:appcompat:$app_compat"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
+    implementation "androidx.legacy:legacy-support-v4:$legacy_support"
+
+    // RxJava
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava"
+    //RxKotline
+    implementation "io.reactivex.rxjava3:rxkotlin:$rxkotlin"
+    // RxAndroid
+    implementation "io.reactivex.rxjava3:rxandroid:$rxandroid"
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    ///retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.google.code.gson:gson:$gson"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_intercepto"
+    //RxJava retrofit
+    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit"
+
+    //Hilt core dependencies Injection
+    implementation "com.google.dagger:hilt-android:$hilt_versiom"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_versiom"
+
+    //Hilt core dependencies Injection for view model
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_view_model"
+    kapt "androidx.hilt:hilt-compiler:$hilt_view_model"
+
+    // Dependencies for local unit tests
+    testImplementation "junit:junit:$junit"
+    testImplementation "org.hamcrest:hamcrest-all:$hamcrest"
+    testImplementation "androidx.arch.core:core-testing:$core_testing"
+    testImplementation "org.robolectric:robolectric:$robolectric"
+
+    //Dependencies for instrumentation tests
+    androidTestImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$test_ext_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
+    androidTestImplementation "androidx.arch.core:core-testing:$core_testing"
+    androidTestImplementation "androidx.test:rules:$test_rules"
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    // Hilt
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_versiom"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_versiom"
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
+    debugImplementation "androidx.test:core-ktx:$test_core_ktx"
+
+    androidTestUtil "androidx.test:orchestrator:$orchestrator"
+}
