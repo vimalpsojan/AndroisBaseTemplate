@@ -58,7 +58,6 @@ dependencies {
     implementation "io.reactivex.rxjava3:rxandroid:$rxandroid"
 
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
@@ -76,9 +75,6 @@ dependencies {
     //Hilt core dependencies Injection
     implementation "com.google.dagger:hilt-android:$hilt_versiom"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_versiom"
-
-    //Hilt core dependencies Injection for view model
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_view_model"
     kapt "androidx.hilt:hilt-compiler:$hilt_view_model"
 
     // Dependencies for local unit tests
