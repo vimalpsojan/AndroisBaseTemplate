@@ -2,6 +2,7 @@ plugins {
     applaySampleAndroisAppPlugins()
 }
 
+
 android {
     namespace = AppConfig.NAMESPACE
     compileSdk = AppConfig.compileSdk
@@ -12,7 +13,7 @@ android {
         targetSdk = AppConfig.targetSdk
         versionCode = AppConfig.versionCode
         versionName = AppConfig.versionName
-
+        buildConfigField("String", "BASE_URL", AppConfig.BASE_URL)
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -32,6 +33,7 @@ android {
 
     buildFeatures {
         dataBinding = true
+        buildConfig = true
     }
 }
 

@@ -7,4 +7,6 @@ object AppConfig {
 
     const val APPLICATION_ID = "com.vimal.sample"
     const val NAMESPACE = "com.vimal.sample"
+
+    const val BASE_URL = "\"http://localhost/DemoApi/\""
 }
