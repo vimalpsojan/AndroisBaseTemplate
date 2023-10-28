@@ -9,9 +9,7 @@ import com.vimal.core.models.Event
  * [onContent] is *only* called if the [Event]'s contents has not been handled.
  */
 class NonNullObserver<T>(private val onContent: (T) -> Unit) : Observer<T> {
-    override fun onChanged(event: T?) {
-        event?.let { value ->
-            onContent(value)
-        }
+    override fun onChanged(event: T) {
+        onContent(event)
     }
 }

@@ -143,7 +143,7 @@ class MainActivity : BaseActivity(), ToolbarProvider {
         }
         if (negativeButton == null && positiveButton == null && neutralButton == null) {
             dialogBuilder.setNeutralButton(
-                    R.string.ok
+                   getText(R.string.ok)
             ) { dialog, _ ->
                 isClicked = true
                 dialog.dismiss()
